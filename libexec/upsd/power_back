@@ -10,4 +10,4 @@ while true;
     sleep 30s
 done
 
-curl -X POST -H "Content-Type: application/json" https://maker.ifttt.com/trigger/[YOUREVENTNAME]/with/key/[YOURIFTTTKEY] 2>1
+curl -s -X POST -H "Content-Type: application/json" https://maker.ifttt.com/trigger/[YOUREVENTNAME]/with/key/[YOURIFTTTKEY] > /dev/null
