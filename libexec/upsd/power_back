@@ -2,4 +2,12 @@
 
 # This script is executed by upsd if the power comes back after a
 # preceding power outage.
+# It will wait until a internet connection is restablished and 
+# send an IFTT notification
 
+while true;
+    do ping -c1 www.google.com > /dev/null && break;
+    sleep 30s
+done
+
+curl -X POST -H "Content-Type: application/json" https://maker.ifttt.com/trigger/[YOUREVENTNAME]/with/key/[YOURIFTTTKEY] 2>1
